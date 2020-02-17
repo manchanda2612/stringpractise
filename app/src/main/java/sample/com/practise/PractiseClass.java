@@ -562,28 +562,28 @@ public class PractiseClass {
 
     public static void checkStringContainsAnotherString(String string, String subString) {
 
-       int stringSize = string.length();
+        int stringSize = string.length();
 
-       int subStringSize = subString.length();
+        int subStringSize = subString.length();
 
-       int count = 0;
+        int count = 0;
 
-       for(int i = 0; i < stringSize; i++) {
+        for(int i = 0; i < stringSize; i++) {
 
-           if(string.charAt(i) == subString.charAt(count)) {
-               count++;
-           } else {
-               count = 0;
-               if(string.charAt(i) == subString.charAt(count)) {
-                   count++;
-               }
-           }
+            if(string.charAt(i) == subString.charAt(count)) {
+                count++;
+            } else {
+                count = 0;
+                if(string.charAt(i) == subString.charAt(count)) {
+                    count++;
+                }
+            }
 
-           if(count == subStringSize) {
-               System.out.println("Index of Substring in String " + (i - (count - 1)));
-               break;
-           }
-       }
+            if(count == subStringSize) {
+                System.out.println("Index of Substring in String " + (i - (count - 1)));
+                break;
+            }
+        }
     }
 
 
@@ -613,17 +613,93 @@ public class PractiseClass {
             }
         }
 
-         if(null != ch)
+        if(null != ch)
             System.out.println("Most repeated character is " + ch);
 
     }
 
 
-    public static void removeGivenCharacterFromString(String word, char ch) {
+    public static void removeGivenCharacterFromStringLogic1(String word, char ch) {
+
+        StringBuilder stringBuilder = new StringBuilder(word);
+
+        int index;
+
+        for (int i = 0; i < stringBuilder.length(); i++) {
+            index = stringBuilder.indexOf(String.valueOf(ch));
+
+            if(index != -1)
+                stringBuilder.deleteCharAt(index);
+
+        }
+
+        System.out.println("Given Character removed " + stringBuilder.toString());
+
+    }
 
 
 
+    public static String removeGivenCharacterFromStringRecursively(String word) {
 
+        int index;
+
+        index = word.indexOf('a');
+
+        if(index == -1) {
+            return word;
+        }
+
+        word = word.substring(0, index) + word.substring(index + 1, word.length());
+
+        return removeGivenCharacterFromStringRecursively(word);
+
+    }
+
+
+    public static String findLongestPalindrome(String s) {
+        // Validations
+        if (s.isEmpty()) {
+            return "Please enter a String";
+        }
+
+        if (s.length() == 1) {
+            return s;
+        }
+        // Validations end
+        // Start with one char (starting) as a longest palindrome
+        String longest = s.substring(0, 1);
+        for (int i = 0; i < s.length(); i = i+1) {
+
+            // get longest palindrome for odd length (center is i)
+            String tmp = checkForEquality(s, i, i);
+            if (tmp.length() > longest.length()) {
+                longest = tmp;
+            }
+
+            // get longest palindrome for even length (center is i, i+1)
+            tmp = checkForEquality(s, i, i + 1);
+            if (tmp.length() > longest.length()) {
+                longest = tmp;
+            }
+        }
+
+        return longest;
+    }
+
+
+    /**
+     * In this method equality is checked starting from
+     * the center moving one character left and one character
+     * right from the center. If both chars are equal then the
+     * next set of chars are checked.
+     *
+     */
+    public static String checkForEquality(String s, int begin, int end) {
+        while (begin >= 0 && end <= s.length() - 1 && s.charAt(begin) == s.charAt(end)) {
+            begin--;
+            end++;
+        }
+        return s.substring(begin + 1, end);
     }
 
 

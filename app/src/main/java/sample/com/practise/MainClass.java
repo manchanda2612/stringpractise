@@ -10,7 +10,8 @@ public class MainClass {
         System.out.println("Please enter word");
         String word1 = scanner.nextLine();
 
-        PractiseClass.highestOccurredCharacterInString(word1);
+
+        System.out.println("Longest Palindorme is : " + PractiseClass.findLongestPalindrome(word1));
 
     }
 
