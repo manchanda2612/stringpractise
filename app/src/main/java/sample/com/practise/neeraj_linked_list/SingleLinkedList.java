@@ -1,6 +1,6 @@
-package sample.com.practise;
+package sample.com.practise.neeraj_linked_list;
 
-public class LinkedListExample {
+public class SingleLinkedList {
 
     private Node head;
     private Node tail;
@@ -26,7 +26,7 @@ public class LinkedListExample {
             System.out.println("List is empty");
         } else {
             Node temp = head;
-            while (temp.next != null) {
+            while (temp.next != tail) {
                 System.out.print(temp.value + "\t");
                 temp = temp.next;
             }
@@ -126,10 +126,12 @@ public class LinkedListExample {
         // if we want to delete node at fist location
         else if (location == 1) {
 
+            // if there is only one node
             if(head == tail) {
                 head = null;
                 tail = null;
             } else {
+                // if more than one node in list
                 head = head.next;
             }
         }
@@ -138,13 +140,21 @@ public class LinkedListExample {
 
         // if we want to delete node at last location
         else if (getSizeOfList() == location) {
-            Node temp = head;
-            for(int i = 2; i <= location -1; i++) {
-                temp = temp.next;
-            }
 
-            temp.next = null;
-            tail = temp;
+            // if there is only one node
+            if (head == tail) {
+                head = null;
+                tail = null;
+            } else {
+                // if more than one node in list
+                Node temp = head;
+                for (int i = 2; i <= location - 1; i++) {
+                    temp = temp.next;
+                }
+
+                temp.next = null;
+                tail = temp;
+            }
         }
 
         // if we want to delete a node at any particular location

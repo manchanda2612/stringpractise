@@ -1,11 +1,11 @@
-package sample.com.practise;
+package sample.com.practise.neeraj_linked_list;
 
 public class SingleLinkedListMainClass {
 
     public static void main(String[] args) {
 
 
-        LinkedListExample linkedListExample = new LinkedListExample();
+        SingleLinkedList linkedListExample = new SingleLinkedList();
         linkedListExample.createNode(10);
 
         linkedListExample.insertNodeAtFirstLastMiddle(2,20);

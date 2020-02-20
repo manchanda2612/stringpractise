@@ -14,8 +14,4 @@ public class MainClass {
         System.out.println("Longest Palindorme is : " + PractiseClass.findLongestPalindrome(word1));
 
     }
-
-
-
-
 }
