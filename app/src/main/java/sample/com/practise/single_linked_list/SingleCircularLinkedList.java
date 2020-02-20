@@ -1,4 +1,4 @@
-package sample.com.practise.neeraj_linked_list;
+package sample.com.practise.single_linked_list;
 
 public class SingleCircularLinkedList {
 
@@ -45,7 +45,7 @@ public class SingleCircularLinkedList {
     public void traverseSingleCircularLinkedList() {
 
         if(head == null) {
-            System.out.println("List is empty");
+            System.out.println("List is empty" + "\n");
         }
 
         else {
@@ -67,7 +67,7 @@ public class SingleCircularLinkedList {
 
         // if there is not node in list
         if(head == null) {
-            System.out.println("List is Empty");
+            System.out.println("List is Empty" + "\n");
         }
 
 
@@ -138,7 +138,7 @@ public class SingleCircularLinkedList {
 
 
         if(head == null) {
-            System.out.println("List is empty");
+            System.out.println("List is empty" + "\n");
         }
 
 

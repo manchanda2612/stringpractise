@@ -1,4 +1,4 @@
-package sample.com.practise.neeraj_linked_list;
+package sample.com.practise.single_linked_list;
 
 class Node {
 

@@ -1,10 +1,11 @@
-package sample.com.practise.neeraj_linked_list;
+package sample.com.practise.single_linked_list;
 
 public class SingleCircularLinkedListMainClass {
 
 
     public static void main(String[] args) {
 
+        // Single circular linked list operations
         SingleCircularLinkedList singleCircularLinkedList = new SingleCircularLinkedList();
 
         singleCircularLinkedList.createCircularLinkedList(10);
@@ -23,8 +24,8 @@ public class SingleCircularLinkedListMainClass {
 
         singleCircularLinkedList.traverseSingleCircularLinkedList();
 
-        System.out.println(singleCircularLinkedList.searchInSingleCircularLinkedList(35));
-        System.out.println(singleCircularLinkedList.searchInSingleCircularLinkedList(70));
+        System.out.println(singleCircularLinkedList.searchInSingleCircularLinkedList(35) + "\n");
+        System.out.println(singleCircularLinkedList.searchInSingleCircularLinkedList(70) + "\n");
 
 
         singleCircularLinkedList.deleteNodeAtFirstLastInBetween(1);

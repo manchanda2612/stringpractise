@@ -1,4 +1,4 @@
-package sample.com.practise.neeraj_linked_list;
+package sample.com.practise.single_linked_list;
 
 public class SingleLinkedListMainClass {
 
@@ -22,8 +22,8 @@ public class SingleLinkedListMainClass {
 
         linkedListExample.traverseSingleLinkedList();
 
-        System.out.println(linkedListExample.searchElementInLinkedList(35));
-        System.out.println(linkedListExample.searchElementInLinkedList(70));
+        System.out.println(linkedListExample.searchElementInLinkedList(35) + "\n");
+        System.out.println(linkedListExample.searchElementInLinkedList(70) + "\n");
 
 
         linkedListExample.deleteNodeAtFirstLastMiddle(1);

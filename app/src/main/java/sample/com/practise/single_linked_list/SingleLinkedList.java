@@ -1,4 +1,4 @@
-package sample.com.practise.neeraj_linked_list;
+package sample.com.practise.single_linked_list;
 
 public class SingleLinkedList {
 
@@ -23,7 +23,7 @@ public class SingleLinkedList {
 
 
         if(head == null) {
-            System.out.println("List is empty");
+            System.out.println("List is empty" + "\n");
         } else {
             Node temp = head;
             while (temp.next != tail) {
@@ -52,7 +52,7 @@ public class SingleLinkedList {
 
         // if list is empty
         if (head == null) {
-            System.out.println("List is Empty");
+            System.out.println("List is Empty" + "\n");
         }
 
         // if we want to add new node at first location
@@ -120,7 +120,7 @@ public class SingleLinkedList {
 
         // if list is empty
         if(head == null) {
-            System.out.println("List is empty");
+            System.out.println("List is empty" + "\n");
         }
 
         // if we want to delete node at fist location
