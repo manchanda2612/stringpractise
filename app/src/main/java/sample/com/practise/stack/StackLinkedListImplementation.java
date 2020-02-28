@@ -1,4 +1,4 @@
-package sample.com.practise.stack_array;
+package sample.com.practise.stack;
 
 public class StackLinkedListImplementation {
 
