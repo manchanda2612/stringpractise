@@ -2,18 +2,18 @@ package sample.com.practise.queue;
 
 public class QueueLinkedListImplementation {
 
-    Node head = null;
-    Node tail = null;
+    Node dequeue = null;
+    Node enqueue = null;
 
     public void createQueue(int value) {
 
         Node node = new Node(value);
-        head = node;
-        tail = node;
+        dequeue = node;
+        enqueue = node;
     }
 
     private boolean isQueueEmpty() {
-        return head == null && tail == null;
+        return dequeue == null && enqueue == null;
     }
 
 
@@ -27,9 +27,9 @@ public class QueueLinkedListImplementation {
         // if we enqueue value at any other location
         else {
             Node node = new Node(value);
-            tail.next = node;
-            tail = node;
-            System.out.println("Enqueue Value is " + tail.value);
+            enqueue.next = node;
+            enqueue = node;
+            System.out.println("Enqueue Value is " + enqueue.value);
         }
     }
 
@@ -40,16 +40,16 @@ public class QueueLinkedListImplementation {
         }
 
         // if there is only one item exist in queue
-        else if (head == tail){
-            System.out.println("Dequeue Value is " + head.value);
-            head = null;
-            tail = null;
+        else if (dequeue == enqueue){
+            System.out.println("Dequeue Value is " + dequeue.value);
+            dequeue = null;
+            enqueue = null;
         }
 
         // if there are more item in the queue
         else {
-            System.out.println("Dequeue Value is " + head.value);
-            head = head.next;
+            System.out.println("Dequeue Value is " + dequeue.value);
+            dequeue = dequeue.next;
 
         }
     }
@@ -60,7 +60,7 @@ public class QueueLinkedListImplementation {
         }
 
         else {
-            System.out.println("Peek Value is " + head.value);
+            System.out.println("Peek Value is " + dequeue.value);
         }
     }
 
@@ -71,9 +71,9 @@ public class QueueLinkedListImplementation {
 
         else {
             System.out.println("Traversing Queue............");
-            Node temp = head;
+            Node temp = dequeue;
 
-            while (temp != tail) {
+            while (temp != enqueue) {
                 System.out.println(temp.value);
                 temp = temp.next;
             }
@@ -82,8 +82,8 @@ public class QueueLinkedListImplementation {
     }
 
     public void deleteQueue() {
-        head = null;
-        tail = null;
+        dequeue = null;
+        enqueue = null;
         System.out.println("Queue is Empty");
     }
 
