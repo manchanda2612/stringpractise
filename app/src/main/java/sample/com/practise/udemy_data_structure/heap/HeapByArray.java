@@ -115,14 +115,18 @@ public class HeapByArray {
 		
 		if (sizeOfTree < left) { //If there is no child of this node, then nothing to do. Just return.
 			return; 
-		}else if (sizeOfTree == left) { //If there is only left child of this node, then do a comparison and return.
+		}
+
+		else if (sizeOfTree == left) { //If there is only left child of this node, then do a comparison and return.
 			if(arr[index] > arr[left]) {
 				int tmp = arr[index];
 				arr[index] = arr[left];
 				arr[left] = tmp;
 			}
 			return;
-		}else { //If both children are there
+		}
+
+		else { //If both children are there
 			if(arr[left] < arr[right]) { //Find out the smallest child
 				smallestChild = left;
 			}else {

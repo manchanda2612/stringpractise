@@ -104,13 +104,12 @@ public class BinarySearchTreeByLinkedList {
 
         else if (node.value > value) {
             node.left =  insertValueAtBinarySearchTree(node.left, value);
-            return node;
         }
 
         else {
             node.right =  insertValueAtBinarySearchTree(node.right, value);
-            return node;
         }
+        return node;
     }
 
     // Helper Method for delete
